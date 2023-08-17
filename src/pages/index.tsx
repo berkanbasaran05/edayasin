@@ -62,11 +62,13 @@ export default function Home() {
               <div className='text'>{words[wordIndex]}</div>
             </div>
           ))}
-          <div className='flex flex-row justify-center w-[400px] mt-24 mx-auto h-[600px]'>
+          {/**
+           * <div className='flex flex-row justify-center w-[400px] mt-24 mx-auto h-[600px]'>
             <video controls className='video' width={400} height={200}>
               <source src='/assets/dogumgunu.mp4' type='video/mp4' />
             </video>
           </div>
+           */}
         </div>
       </div>
     </main>
