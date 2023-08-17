@@ -3,11 +3,72 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const words = ['Eda-Yasin', 'Seni Çok Seviyorum', 'Seni rastgele sevmedim.', 'Hayatımın anlamı', 'Çocuklarımın annesi', 'Ömrüm'];
+
 export default function Home() {
+<<<<<<< HEAD
+  const [points, setPoints] = useState<Point[]>([]);
+  const [data, setData] = useState<Point[]>([]);
+  const [wordIndex, setWordIndex] = useState(0);
+
+  const clickHandle = (e: React.MouseEvent<HTMLDivElement>) => {
+    setPoints(prevPoints => [...prevPoints, { x: e.clientX, y: e.clientY }]);
+    setData([]);
+    setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+  };
+
+  const redoHandle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    const newData = [...points];
+    const item = newData.pop();
+    if (item) {
+      setData(prevData => [...prevData, item]);
+      setPoints(newData);
+      setWordIndex((prevIndex) => (prevIndex - 1 + words.length) % words.length);
+    }
+  };
+
+  const undoHandle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    const newData = [...data];
+    const item = newData.pop();
+    if (item) {
+      setPoints(prevPoints => [...prevPoints, item]);
+      setData(newData);
+      setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }
+  };
+
+=======
+>>>>>>> parent of 524b239 (last)
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
+<<<<<<< HEAD
+      <div className='flex flex-col w-full h-full' style={{ backgroundImage: `url("/assets/ey.jpeg")`, backgroundSize: 'cover' }}>
+        <div className='h-screen w-full ' onClick={clickHandle}>
+          <header className='header'>
+            <button disabled={points.length === 0} onClick={redoHandle} className='border border-white'>
+              Geri Al
+            </button>
+            <button disabled={data.length === 0} onClick={undoHandle} className='border border-white'>
+              İleri
+            </button>
+          </header>
+          {points.map((heart, key) => (
+            <div className='heart items-center flex' key={key} style={{ left: heart.x, top: heart.y }}>
+              <div className='text'>{words[wordIndex]}</div>
+            </div>
+          ))}
+          <div className='flex flex-row justify-center w-[400px] mt-24 mx-auto h-[600px]'>
+            <video controls className='video' width={400} height={200}>
+              <source src='/assets/dogumgunu.mp4' type='video/mp4' />
+            </video>
+          </div>
+        </div>
+      </div>
+=======
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
@@ -113,6 +174,7 @@ export default function Home() {
           </p>
         </a>
       </div>
+>>>>>>> parent of 524b239 (last)
     </main>
-  )
+  );
 }

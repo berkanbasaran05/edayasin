@@ -25,3 +25,77 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+<<<<<<< HEAD
+.screen{
+  height: 100vh;
+  
+}
+.videocontainer{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.heart{
+  display:inline-block;
+  width: 75px; 
+  aspect-ratio: 1;
+  border-image: radial-gradient(rgb(21, 21, 21) 69%,#0000 70%) 84.5% fill/100%;
+  clip-path: polygon(-41% 0,50% 91%, 141% 0);
+  position: absolute;
+  align-items: center;
+  flex: auto;
+  margin: right 15px;;
+}
+
+.point{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.text{
+  margin-left: 15px;
+  margin-top: 10px;
+  font-size: x-small;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.header{
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  justify-items: baseline;
+  align-items: flex-start;
+  padding: 2em;
+  display: flex;
+  gap:1em;
+
+}
+.header button {
+  height: 4em;
+  width: 4em;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  font-size: 16px; 
+  cursor: pointer;
+}
+
+.header button[disabled] {
+  opacity: .5;
+
+
+}
+
+.img {
+  width: 100%;
+  height: 400;
+
+}
+=======
+>>>>>>> parent of 524b239 (last)
