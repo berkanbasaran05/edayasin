@@ -8,7 +8,7 @@ interface Point {
   y: number;
 }
 
-const words = ['Aslı-Egemen', 'Seni Çok Seviyorum', 'Seni rastgele sevmedim.', 'Hayatımın anlamı', 'Çocuklarımın annesi', 'Ömrüm'];
+const words = ['Eda-Yasim', 'Seni Çok Seviyorum', 'Seni rastgele sevmedim.', 'Hayatımın anlamı', 'Çocuklarımın annesi', 'Ömrüm'];
 
 export default function Home() {
   const [points, setPoints] = useState<Point[]>([]);
